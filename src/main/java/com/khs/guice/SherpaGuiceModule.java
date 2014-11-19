@@ -10,6 +10,7 @@ public class SherpaGuiceModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
+		// There must be a better way to get to the servlet context...
 		ApplicationContext applicationContext = (ApplicationContext)SherpaGuiceContextListener.getServletContext().getAttribute(GenericApplicationContext.SHERPA_APPLICATION_CONTEXT_ATTRIBUTE);
 		SherpaGuiceManagedBeanFactory factory = (SherpaGuiceManagedBeanFactory)applicationContext.getManagedBeanFactory();
 		for (String name : factory.getBeanDefinitionNames()) {
