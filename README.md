@@ -42,6 +42,8 @@ public class MyApplicationContextListener extends GuiceServletContextListener im
 
 	@Override
 	protected Injector getInjector() {
+		// add your application modules here
+	
 		modulesLoaded.add(new ServletModule() {
 			@Override
 			protected void configureServlets() {
